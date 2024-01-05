@@ -1,0 +1,30 @@
+Hyperparameter, CV, 
+
+Hyperparameter: 
+
+A hyperparameter is a parameter whose value is used to control the learning process.
+
+Hyperparameters directly control model structure, function, and performance. Hyperparameter tuning allows data scientists to tweak model performance for optimal results. 
+
+techniques:
+
+1. grid search : checks through all possible permutations and combinations to determine the best fit. 
+* grid search cv ( cross validation)
+disadvantage: slow, computationally intensive
+
+
+2. Random search cv: viceversa of grid search
+selects groups of hyperparameters randomly on each iteration. It works well when a relatively small number of the hyperparameters primarily determine the model outcome.
+advantage: less memory and fast
+
+
+3. Bayesian optimization: 
+algorithm builds a probabilistic model from a set of hyperparameters that optimizes a specific metric. It uses regression analysis to iteratively choose the best set of hyperparameters.
+
+
+CROSS VALIDATION : (VALIDATION - testing, cross - a technique for evaluating ML models by training several ML models on subsets of the available input data and evaluating them on the complementary subset of the data.)
+
+Let's consider there are 10 data points with Folds = 5, then 2 datapoints in each fold. i.e., 2 data point will go for testing rest 8 will go for training. And iteration contnue by taking next 2 data points from all the folds. 
+
+conclusion : cross - across all the data points AND validation is testing model
+

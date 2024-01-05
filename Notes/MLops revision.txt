@@ -1,0 +1,48 @@
+MLops revision:
+
+github
+cicdcd
+deloyment to aws ecr
+mlflow -- to track experiments locally
+
+dvc -- data version control
+
+===============================================================================================================================================
+
+1. mlflow: 
+
+-- experiment tracking
+-- storing metrics, parameters
+--storing artifacts, logs
+-- UI present
+-- we can perform model registry and model versioning. 
+
+
+===============================================================================================================================================
+
+
+2. dagsflow -- open source tool to track exp using mlflow
+
+
+================================================================================================================================================
+
+
+3. dvc -- data version control
+
+-- data versioning
+-- pipeline reproducibility
+
+dvc init                                                                               -- initialize
+dvc add data                                                                           -- to add data
+dvc remote add -d remote_storage path/to/your/dvc_remote(s3/azure etc)                 -- to add remote repository. (similar to git remote)
+dvc dag                                                                                -- shows the dependencies of the stage files in graph (acyclic graph)
+dvc repro                                                                              --tracks any changes in the stage files and updates it to lock file. **when we use dvc repro cmd, it calls dvc yaml file for the pipeline execution tracking and updates all the info in the lock file. And all the information wil be store in dvc/cache.**
+
+create stage files                                                                     --(for individual data processes)
+create dvc.yaml file                                                                   --(for executing the stage files)( tracks everything) 
+
+note: large data cannot be stored in git, so we use dvc. 
+1st add data to dvc to version controlling, 
+2nd, try git add. ( only the cache file from dvc output will be stored in git, data will be stored in dvc)
+* study what is reproducibility in dvc and git. 
+
